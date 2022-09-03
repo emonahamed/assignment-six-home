@@ -8,22 +8,21 @@ const loadNews = async () => {
 
 const displayNews = news => {
     const catagoriesContainer = document.getElementById('catagories');
+    catagoriesContainer.innerHTML = '';
 
     news.forEach(data => {
-        // console.log(data);
+
         const catagoriesDiv = document.createElement('div');
         catagoriesDiv.classList.add('col')
         catagoriesDiv.innerHTML = `
-        <p class="btn btn-light"  onclick="myFunction()">${data.category_name}</p>
+        <p class="btn btn-light"  onclick="myFunction(${data.category_id})">${data.category_name}</p>
         `;
         catagoriesContainer.appendChild(catagoriesDiv);
 
 
     })
 
-
 }
-
 
 
 
@@ -32,5 +31,5 @@ const displayNews = news => {
 loadNews();
 
 
-// myFunction = () => { console.log('pppp') };
+
 
