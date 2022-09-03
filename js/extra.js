@@ -28,7 +28,7 @@ const displayCatagories = (cards) => {
             <div class="col-md-8">
                 <div class="card-body">
                     <h5 class="card-title">${card.title}</h5>
-                    <p class="card-text">${card.details}</p>
+                    <p class="card-text">${card.details.slice(0, 200,)} .... </p>
                     <div class="d-flex justify-content-around">
                         <div class="w-25">
                                <img src="${card.author.img}" class="img-fluid rounded-circle  w-25" alt="...">
