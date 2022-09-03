@@ -16,6 +16,16 @@ const myFunction = async (id) => {
 
 
 const displayCatagories = (cards) => {
+
+    console.log(cards);
+
+    cards.sort(function (a, b) {
+        return b.total_view - a.total_view;
+
+    });
+
+
+
     if (cards.length === 0) {
         toggleSpinner(false);
     }
@@ -25,16 +35,16 @@ const displayCatagories = (cards) => {
     const inputField = document.getElementById('show-items-number');
     inputField.value = `${cards.length} items found`;
 
+
+
     cards.forEach(card => {
-
-
-
-
-
-
         const cardDiv = document.createElement('div');
         cardDiv.classList.add('col-12');
         cardDiv.innerHTML = `
+
+
+
+
         <div class="card mb-3" style="max-width: 740px;">
         <div class="row g-0">
             <div class="col-md-4">
