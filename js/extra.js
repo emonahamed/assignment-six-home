@@ -32,14 +32,14 @@ const displayCatagories = (cards) => {
                     <div class="d-flex justify-content-around">
                         <div class="w-25">
                                <img src="${card.author.img}" class="img-fluid rounded-circle  w-25" alt="...">
-                             <p class="text-muted">${card.author.name}</p>
+                             <p class="text-muted">${card.author.name ? card.author.name : 'no data found'}</p>
                         </div>
                         <div>
-                        <p class="card-text"><small><i class="fa-regular fa-eye">${card.total_view}</i></small>
+                        <p class="card-text"><small><i class="fa-regular fa-eye">${card.total_view ? card.total_view : 'no data found'}</i></small>
                         </p>
                         </div>
                         <div> 
-                        <button onclick="loadNewsDetails('${card._id}')"   href="#" class="btn btn-primary">Show Details</button>
+                        <button onclick="loadNewsDetails('${card._id}')"   href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" >Show Details</button>
 
 
                         </div>    
@@ -61,10 +61,24 @@ const loadNewsDetails = async id => {
 
     const res = await fetch(url);
     const data = await res.json();
-    console.log(data.data[0]);
+    displayNewsDetails(data.data[0]);
+
+}
+
+const displayNewsDetails = updates => {
+    console.log(updates);
 
 
+    const modalTitle = document.getElementById('exampleModalLabel');
+    modalTitle.innerText = updates.title;
 
+    const newsDetails = document.getElementById('news-details');
+    newsDetails.innerHTML = `
+    <P> Author name: ${updates.author.name ? updates.author.name : 'no data found'}</p>
+    <p>total view: ${updates.total_view ? updates.total_view : 'no data found'}</P>
+    <p>news details : ${updates.details} </P>
+
+    `
 
 }
 
