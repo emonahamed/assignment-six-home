@@ -1,12 +1,16 @@
 const myFunction = async (id) => {
     toggleSpinner(true);
 
-
     const url = `https://openapi.programming-hero.com/api/news/category/0${id}`;
-    const res = await fetch(url);
-    const data = await res.json();
-    displayCatagories(data.data);
 
+    try {
+        const res = await fetch(url);
+        const data = await res.json();
+        displayCatagories(data.data);
+    }
+    catch (error) {
+        console.log(error);
+    }
 
 }
 
@@ -78,9 +82,19 @@ const displayCatagories = (cards) => {
 const loadNewsDetails = async id => {
     const url = `https://openapi.programming-hero.com/api/news/${id}`;
 
-    const res = await fetch(url);
-    const data = await res.json();
-    displayNewsDetails(data.data[0]);
+
+    try {
+        const res = await fetch(url);
+        const data = await res.json();
+        displayNewsDetails(data.data[0]);
+    }
+    catch (error) {
+        console.log(error);
+    }
+
+
+
+
 
 }
 
