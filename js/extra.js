@@ -32,19 +32,25 @@ const displayCatagories = (cards) => {
                     <div class="d-flex justify-content-around">
                         <div class="w-25">
                                <img src="${card.author.img}" class="img-fluid rounded-circle  w-25" alt="...">
-                                <p class="text-muted">${card.author.published_date}</p>
+                             <p class="text-muted">${card.author.name}</p>
                         </div>
                         <div>
                         <p class="card-text"><small><i class="fa-regular fa-eye">${card.total_view}</i></small>
                         </p>
                         </div>
-                        <div> <p class="btn btn-light">Open Details</p></div>
-                       
+                        <div> 
+                        
+                        <p class="btn btn-light">Open Details</p>
+                        
+                        
+                        
+                        </div>    
                     </div>
                 </div>
             </div>
         </div>
     </div>
+  
         `;
 
         cardContainer.appendChild(cardDiv);
