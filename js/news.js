@@ -7,29 +7,30 @@ const loadNews = async () => {
 
 
 const displayNews = news => {
-    // console.log(news);
-
     const catagoriesContainer = document.getElementById('catagories');
 
     news.forEach(data => {
-        console.log(data);
-
+        // console.log(data);
         const catagoriesDiv = document.createElement('div');
         catagoriesDiv.classList.add('col')
         catagoriesDiv.innerHTML = `
-        <p class="btn btn-light">${data.category_name}</p>
+        <p class="btn btn-light"  onclick="myFunction()">${data.category_name}</p>
         `;
         catagoriesContainer.appendChild(catagoriesDiv);
-
-
 
 
     })
 
 
-
-
 }
 
+
+
+
+
+
 loadNews();
+
+
+// myFunction = () => { console.log('pppp') };
 
