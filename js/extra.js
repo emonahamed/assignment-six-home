@@ -39,11 +39,9 @@ const displayCatagories = (cards) => {
                         </p>
                         </div>
                         <div> 
-                        
-                        <p class="btn btn-light">Open Details</p>
-                        
-                        
-                        
+                        <button onclick="loadNewsDetails('${card._id}')"   href="#" class="btn btn-primary">Show Details</button>
+
+
                         </div>    
                     </div>
                 </div>
@@ -56,6 +54,18 @@ const displayCatagories = (cards) => {
         cardContainer.appendChild(cardDiv);
 
     })
+}
+
+const loadNewsDetails = async id => {
+    const url = `https://openapi.programming-hero.com/api/news/${id}`;
+
+    const res = await fetch(url);
+    const data = await res.json();
+    console.log(data.data[0]);
+
+
+
+
 }
 
 
