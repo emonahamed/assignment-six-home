@@ -1,4 +1,6 @@
 const myFunction = async (id) => {
+    toggleSpinner(true);
+
 
     const url = `https://openapi.programming-hero.com/api/news/category/0${id}`;
     const res = await fetch(url);
@@ -10,12 +12,15 @@ const myFunction = async (id) => {
 
 
 const displayCatagories = (cards) => {
+    if (cards.length === 0) {
+        toggleSpinner(false);
+    }
 
     const cardContainer = document.getElementById('card-container')
     cardContainer.innerHTML = '';
 
     cards.forEach(card => {
-        console.log(card);
+        // console.log(card);
 
         const cardDiv = document.createElement('div');
         cardDiv.classList.add('col-12');
@@ -51,7 +56,15 @@ const displayCatagories = (cards) => {
   
         `;
 
+
+
         cardContainer.appendChild(cardDiv);
+
+        toggleSpinner(false);
+
+
+
+
 
     })
 }
@@ -79,6 +92,20 @@ const displayNewsDetails = updates => {
     <p>news details : ${updates.details} </P>
 
     `
+
+}
+
+const toggleSpinner = isLoading => {
+    const loaderSection = document.getElementById('loader');
+    if (isLoading) {
+        loaderSection.classList.remove('d-none')
+    }
+    else {
+        loaderSection.classList.add('d-none');
+
+    }
+
+
 
 }
 
