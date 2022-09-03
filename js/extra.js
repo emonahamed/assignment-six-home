@@ -7,7 +7,7 @@ const myFunction = async (id) => {
     const data = await res.json();
     displayCatagories(data.data);
 
-    // myFunction(data);
+
 }
 
 
@@ -18,9 +18,15 @@ const displayCatagories = (cards) => {
 
     const cardContainer = document.getElementById('card-container')
     cardContainer.innerHTML = '';
+    const inputField = document.getElementById('show-items-number');
+    inputField.value = `${cards.length} items found`;
 
     cards.forEach(card => {
-        // console.log(card);
+
+
+
+
+
 
         const cardDiv = document.createElement('div');
         cardDiv.classList.add('col-12');

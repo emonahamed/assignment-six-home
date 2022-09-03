@@ -11,7 +11,6 @@ const displayNews = news => {
     catagoriesContainer.innerHTML = '';
 
     news.forEach(data => {
-
         const catagoriesDiv = document.createElement('div');
         catagoriesDiv.classList.add('col')
         catagoriesDiv.innerHTML = `

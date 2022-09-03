@@ -30,7 +30,10 @@
                                 <a class="nav-link active" aria-current="page" href="#">News</a>
                             </li>
                             <li class="nav-item">
-                                <div onclick="myFunction()" id="my-questions" class="btn btn-primary ">blogs</div>
+                                <button type="button" class="btn btn-light" data-bs-toggle="modal"
+                                    data-bs-target="#staticBackdrop">
+                                    Blogs
+                                </button>
                             </li>
                         </ul>
 
@@ -42,10 +45,12 @@
     <hr>
 
     <main>
+
+        <input class="d-block w-75 mx-auto m-2" type="items found" name="" id="show-items-number">
+
+
+
         <section class="container">
-            <div class="col">
-                <p class="btn btn-light">Home</p>
-            </div>
             <div id="catagories" class="row">
                 <div class="col">
                     <p class="btn btn-light">Home</p>
@@ -56,22 +61,17 @@
         <section class="container">
             <div id="card-container" class="row">
 
-                <!-- extra start -->
-
-                <!-- extra end -->
-
             </div>
         </section>
-
     </main>
 
 
 
 
 
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-        Launch demo modal
-    </button>
+
+
+
 
 
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -105,9 +105,78 @@
 
     </section>
 
+    <!-- spinners end -->
 
 
-    <!-- spinners start -->
+
+    <!-- blogs modal start  -->
+
+    <section>
+
+
+        <!-- Modal -->
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">Blogs</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <div>
+                                <p>1.Describe the differences among var, let and const?</p>
+                                <p> <small> var variable is a functional scope variable. It can be declared and
+                                        accessed without
+                                        initialization. It can be updated or reinitialized unlike let and const
+                                        variable.
+                                        let and const is appeared first in ES6. Both of them are block scope variable.
+                                        Neither they can be reinitialized nor declared before initialization. The
+                                        variable
+                                        declared by Let can be updated but const can not be updated. </small></p>
+                            </div>
+                            <div>
+                                <p>2. Describe the differences between arrow function and regular function.</p>
+                                <p> <small>While both regular and arrow functions work in a similar manner, yet there
+                                        are certain interesting differences between them :
+                                        1. Unlike regular functions, arrow functions do not have their own 'this'
+                                        keyword.
+                                        2. Arguments objects are not available in arrow functions, but are available in
+                                        regular functions.
+                                        3. Regular functions are ‘constructible’ and ‘callable’. The arrow functions are
+                                        only ‘callable’ but not constructible. Regular functions can be called using the
+                                        ‘new’ keyword. But we will get a run-time error on trying to construct a
+                                        non-constructible arrow functions using the new keyword. </small></p>
+                            </div>
+                            <div>
+                                <p>3. Why should you use 'Templete String' ?</p>
+                                <p> <small> Template string is a powerful feature of modern JavaScript released in ES6.
+                                        It lets us insert variables and expressions into strings without needing to
+                                        concatenate like in older versions of JavaScript. It allows us to create strings
+                                        that are complex and contain dynamic elements. </small></p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </section>
+
+
+
+
+
+
+    <!-- blogs modal end  -->
 
 
 
