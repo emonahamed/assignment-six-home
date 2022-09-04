@@ -1,7 +1,6 @@
 const loadNews = async () => {
     const url = `https://openapi.programming-hero.com/api/news/categories`
 
-
     try {
         const res = await fetch(url);
         const data = await res.json();
@@ -11,13 +10,12 @@ const loadNews = async () => {
         console.log(error);
     }
 
-
 }
 
 
 const displayNews = news => {
     const catagoriesContainer = document.getElementById('catagories');
-    // catagoriesContainer.innerHTML = '';
+
 
     news.forEach(data => {
         const catagoriesDiv = document.createElement('div');

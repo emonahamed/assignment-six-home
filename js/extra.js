@@ -74,10 +74,6 @@ const displayCatagories = (cards) => {
 
         toggleSpinner(false);
 
-
-
-
-
     })
 }
 
@@ -111,6 +107,7 @@ const displayNewsDetails = updates => {
     newsDetails.innerHTML = `
 
     <img src="${updates.image_url}" class="img-fluid rounded-start" alt="...">
+    <p>publish date: ${updates.author.published_date}</P>
     <P> Author name: ${updates.author.name ? updates.author.name : 'no data found'}</p>
     <p>total view: ${updates.total_view ? updates.total_view : 'no data found'}</P>
     <p>news details : ${updates.details} </P>
