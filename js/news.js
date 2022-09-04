@@ -17,11 +17,14 @@ const loadNews = async () => {
 
 const displayNews = news => {
     const catagoriesContainer = document.getElementById('catagories');
-    catagoriesContainer.innerHTML = '';
+    // catagoriesContainer.innerHTML = '';
 
     news.forEach(data => {
         const catagoriesDiv = document.createElement('div');
-        catagoriesDiv.classList.add('col')
+        catagoriesDiv.classList.add('col-sm-12');
+        catagoriesDiv.classList.add('col-lg-1');
+        catagoriesDiv.classList.add('mx-auto');
+
         catagoriesDiv.innerHTML = `
         <p class="btn btn-light"  onclick="myFunction(${data.category_id})">${data.category_name}</p>
         `;

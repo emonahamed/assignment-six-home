@@ -36,15 +36,10 @@ const displayCatagories = (cards) => {
     inputField.value = `${cards.length} items found`;
 
 
-
     cards.forEach(card => {
         const cardDiv = document.createElement('div');
         cardDiv.classList.add('col-12');
         cardDiv.innerHTML = `
-
-
-
-
         <div class="card mb-3" style="max-width: 740px;">
         <div class="row g-0">
             <div class="col-md-4">
@@ -65,8 +60,6 @@ const displayCatagories = (cards) => {
                         </div>
                         <div> 
                         <button onclick="loadNewsDetails('${card._id}')"   href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" >Show Details</button>
-
-
                         </div>    
                     </div>
                 </div>
@@ -75,7 +68,6 @@ const displayCatagories = (cards) => {
     </div>
   
         `;
-
 
 
         cardContainer.appendChild(cardDiv);
@@ -117,6 +109,8 @@ const displayNewsDetails = updates => {
 
     const newsDetails = document.getElementById('news-details');
     newsDetails.innerHTML = `
+
+    <img src="${updates.image_url}" class="img-fluid rounded-start" alt="...">
     <P> Author name: ${updates.author.name ? updates.author.name : 'no data found'}</p>
     <p>total view: ${updates.total_view ? updates.total_view : 'no data found'}</P>
     <p>news details : ${updates.details} </P>
